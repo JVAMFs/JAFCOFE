@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f5e1c0;
+  color: #4b2e05;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background-color: #4b2e05;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* NAVIGATION */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN LAYOUT */
+main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+#content {
+  flex: 3;
+  min-width: 300px;
+}
+
+aside {
+  flex: 1;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+}
+
+aside img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+/* ARTICLE */
+article {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+  color: #4b2e05;
+  margin-bottom: 10px;
+}
+
+/* SLIDER */
+.slider {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto 15px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slide {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+/* TOMBOL TAMPILKAN PRODUK */
+#showProducts {
+  background-color: #4b2e05;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+#showProducts:hover {
+  background-color: #3a2203;
+  transform: translateY(-2px);
+}
+
+/* LIST PRODUK */
+#productList {
+  margin-top: 25px;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+/* KARTU PRODUK */
+#productList li {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+#productList li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* GAMBAR PRODUK */
+#productList li img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* TEKS PRODUK */
+#productList li h4 {
+  color: #4b2e05;
+  font-size: 1.05em;
+  margin-bottom: 5px;
+}
+
+#productList li p {
+  font-size: 0.9em;
+  color: #6b4f2a;
+  margin-bottom: 5px;
+}
+
+#productList li span {
+  font-weight: bold;
+  color: #2a1600;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background-color: #4b2e05;
+  color: #fff;
+  padding: 15px;
+  margin-top: 20px;
+  border-top: 3px solid #2a1600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #4b2e05;
+    width: 100%;
+    margin-top: 10px;
+    border-top: 2px solid #2a1600;
+    padding: 10px 0;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .navbar ul.active {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+
+  .navbar ul li {
+    padding: 10px 0;
+  }
+
+  .navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+  }
+
+  .navbar ul li a:hover {
+    background-color: #2a1600;
+  }
+
+  /* Gambar slider di HP */
+  .slider {
+    max-width: 100%;
+  }
+
+  .slide {
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+/* Animasi untuk menu dropdown */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
